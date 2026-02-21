@@ -1,0 +1,13 @@
+[package]
+name = "btcswap"
+version = "0.1.0"
+edition = "2024_07"
+description = "BtcSwap private swaps on Starknet"
+cairo-version = "2.9.1"
+
+[dependencies]
+starknet = ">=2.8.0"
+
+[[target.starknet-contract]]
+sierra = true
+casm = true
