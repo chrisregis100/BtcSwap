@@ -8,13 +8,16 @@ export function ConnectWallet() {
   if (address) {
     return (
       <div className="flex items-center gap-3">
-        <span className="text-sm text-zinc-500 font-mono">
-          {address.slice(0, 6)}...{address.slice(-4)}
+        <span className="flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-400">
+          <span className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400" aria-hidden />
+          <span className="font-mono tabular-nums">
+            {address.slice(0, 6)}…{address.slice(-4)}
+          </span>
         </span>
         <button
           type="button"
           onClick={disconnect}
-          className="rounded-lg border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-100 dark:border-zinc-600 dark:hover:bg-zinc-800"
+          className="rounded-lg border border-[var(--card-border)] px-4 py-2 text-sm font-medium text-[var(--foreground)] hover:bg-zinc-100 dark:hover:bg-zinc-800"
         >
           Disconnect
         </button>
@@ -27,9 +30,9 @@ export function ConnectWallet() {
       type="button"
       onClick={connect}
       disabled={isConnecting}
-      className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+      className="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      {isConnecting ? "Connecting..." : "Connect Wallet"}
+      {isConnecting ? "Connecting…" : "Connect Wallet"}
     </button>
   );
 }

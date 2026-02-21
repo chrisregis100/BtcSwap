@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased min-h-screen bg-[var(--background)] text-[var(--foreground)]">
         <StarknetProvider>{children}</StarknetProvider>
       </body>
     </html>

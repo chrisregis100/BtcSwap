@@ -40,6 +40,10 @@ Set env (e.g. `.env.local`):
 2. **Swap** – User builds a ZK proof (MVP: stub from `/api/proof` or mock), then calls vault `swap_private(proof, commitment_in, commitment_out, nullifier, ...)`.
 3. **Withdraw** – User proves balance with ZK and calls vault `withdraw(proof, commitment, nullifier, amount, token)`.
 
+## Testing
+
+A full step-by-step testing guide (deploy, configure, test Deposit / Swap / Withdraw) is in **[docs/TESTING.md](docs/TESTING.md)**.
+
 ## Security
 
 - Credentials (salt, commitment, nullifier material) are stored only in the browser; export/import for backup.
